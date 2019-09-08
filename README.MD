@@ -10,8 +10,9 @@
 2) Add router dependencies  `yarn add react-router-dom` and wrap `<App/> in <BrowserRouter>`
 
 3) Add ReactSpinners Kit  & React Loader Spinner dependencies
-    - `yarn react-spinners-kit react-loader-spinner`
-    - ``
+    - `yarn add react-spinners-kit react-loader-spinner`
+        - For `react-loaded-spinner` you must also add `styled-components`
+        - `yarn add styled-components`
 4) Add `semantic UI  React` dependencies and configure `src/index.html`
     - `yarn add semantic-ui-react`
     - add to `index.html`  

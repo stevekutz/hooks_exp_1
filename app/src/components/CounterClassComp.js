@@ -26,7 +26,8 @@ export default class CounterClassComp extends Component{
             // const {countVal} = this.state;  // NOT HERE
 
             <Fragment>
-                <Card.Group centered>
+                <Card.Group centered style = {{border: `1px solid green`}}>
+                <Card.Header> Counter Class Component </Card.Header>
                    <Card.Content> {countVal}</Card.Content> 
                    {/* will cause Maximum update depth exceed error*/}
                    {/* <Button onClick = { this.incrementCounter() }> increment </Button> */}
