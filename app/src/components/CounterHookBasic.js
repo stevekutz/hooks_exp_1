@@ -16,26 +16,21 @@ export default function CounterHooks() {
         <Fragment>
                 <Card>
                 
-                
-                
-                <Card.Content>
-                
-                <Card.Group centered style = {{border: `1px solid pink`}}>
-                <Card.Header> Hooks Basic </Card.Header>
-                <Card.Content>
-                <Card.Description> {countVal}</Card.Description> 
-                {/* will cause Maximum update depth exceed error*/}
-                {/* <Button onClick = { this.incrementCounter() }> increment </Button> */}
-                
-                <Button  color = 'blue' inverted onClick = { () => incrementCount(countVal + 1) }> Increment</Button>
-                <Label>{countVal}</Label>     
-                </Card.Content>
-                
-                </Card.Group>  
-                
-                
-                
-                </Card.Content>    
+                    <Card.Content>
+                    
+                        <Card.Group centered style = {{border: `1px solid pink`}}>
+                            <Card.Header> Hooks Basic </Card.Header>
+                            <Card.Content>
+                            <Card.Description> {countVal}</Card.Description> 
+                            {/* will cause Maximum update depth exceed error*/}
+                            {/* <Button onClick = { this.incrementCounter() }> increment </Button> */}
+                            
+                            <Button  color = 'blue' inverted onClick = { () => incrementCount(countVal + 1) }> Increment</Button>
+                            <Label>{countVal}</Label>     
+                            </Card.Content>        
+                        </Card.Group>  
+                                     
+                    </Card.Content>    
                 
                 </Card>
 

@@ -41,22 +41,13 @@ export default class CounterClassComp extends Component{
                                 <Label>{countVal}</Label>                        
                             </Card.Content>
                         </Card.Group>
-                    
-                    
+                                        
                     </Card.Content>
-                
-                
-                
                 
                 </Card>
 
-
             </Fragment>
         )
-
-
     }
-
-
 }
 
