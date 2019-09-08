@@ -2,12 +2,16 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import CounterClassComponent from './components/CounterClassComp';
+import { CardContent } from 'semantic-ui-react';
+
+export default function App() {
   return (
     <div className="App">
       <h1> Something </h1>
+      <CounterClassComponent/>
     </div>
   );
 }
 
-export default App;
+// export default App;
