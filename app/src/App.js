@@ -9,6 +9,8 @@ import {Button, Card, Container, Grid,
 
 import CounterClassComponent from './components/CounterClassComp';
 import CounterHooksBasic from './components/CounterHookBasic';
+import CounterHooksEffects from './components/CounterHooksEffect_1';
+
 
 export default function App() {
   return (
@@ -16,6 +18,7 @@ export default function App() {
       <Card.Group centered itemsPerRow = '4'>
           <CounterClassComponent/>
           <CounterHooksBasic/>
+          <CounterHooksEffects/>
       </Card.Group>
     </div>
       
