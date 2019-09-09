@@ -7,33 +7,29 @@ import {Button, Card, Container, Grid,
     import {PushSpinner, GuardSpinner, 
         PongSpinner, TraceSpinner} 
         from 'react-spinners-kit';
-import { brotliDecompress } from 'zlib';
+
+        import addReactNDevTools from 'reactn-devtools';
+        addReactNDevTools();        
 
 export default function CounterHooks() {
     const [countVal, incrementCount] = useState(0);
 
     return (
         <Fragment>
-                <Card>
-                
-                    <Card.Content>
-                    
-                        <Card.Group centered style = {{border: `1px solid pink`}}>
-                            <Card.Header> Hooks Basic </Card.Header>
-                            <Card.Content>
-                            <Card.Description> {countVal}</Card.Description> 
-                            {/* will cause Maximum update depth exceed error*/}
-                            {/* <Button onClick = { this.incrementCounter() }> increment </Button> */}
-                            
-                            <Button  color = 'blue' inverted onClick = { () => incrementCount(countVal + 1) }> Increment</Button>
-                            <Label>{countVal}</Label>     
-                            </Card.Content>        
-                        </Card.Group>  
-                                     
-                    </Card.Content>    
-                
-                </Card>
-
+            <Card  centered style = {{display: 'flex', justifyContent: 'center', width: '25%'}}>  
+                <Segment>
+                    <Card.Header textAlign = 'center'> Hooks Basic </Card.Header>    
+                    <Card.Description textAlign = 'center'> {countVal}</Card.Description> 
+                </Segment> 
+                <Segment>
+                    <Card.Content textAlign = 'center'>
+                        {/* will cause Maximum update depth exceed error*/}
+                        {/* <Button onClick = { this.incrementCounter() }> increment </Button> */}    
+                        <Button  color = 'purple' inverted onClick = { () => incrementCount(countVal + 1) }> Increment</Button>
+                        <Label>{countVal}</Label>     
+                    </Card.Content>                        
+                </Segment> 
+            </Card>
         </Fragment>
     )
 }

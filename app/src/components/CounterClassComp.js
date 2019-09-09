@@ -26,26 +26,20 @@ export default class CounterClassComp extends Component{
             // const {countVal} = this.state;  // NOT HERE
 
             <Fragment>
-                <Card>
-                
-                    <Card.Content>
-                    
-                        <Card.Group centered style = {{border: `1px solid green`}}>
-                            <Card.Header> Counter Class Component </Card.Header>
-                            <Card.Content>
-                                <Card.Description> {countVal}</Card.Description> 
-                                {/* will cause Maximum update depth exceed error*/}
-                                {/* <Button onClick = { this.incrementCounter() }> increment </Button> */}
-                                
-                                <Button  color = 'blue' inverted onClick = { () => this.incrementCounter() }> Increment</Button>
-                                <Label>{countVal}</Label>                        
-                            </Card.Content>
-                        </Card.Group>
-                                        
-                    </Card.Content>
-                
+                <Card  centered style = {{display: 'flex', justifyContent: 'center', width: '25%'}}>         
+                    <Segment>
+                        <Card.Header textAlign = 'center'> Counter Class Component </Card.Header>
+                        <Card.Description textAlign = 'center'> {countVal}</Card.Description> 
+                    </Segment>
+                    <Segment>        
+                        <Card.Content textAlign = 'center'>
+                            {/* will cause Maximum update depth exceed error*/}
+                            {/* <Button onClick = { this.incrementCounter() }> increment </Button> */}       
+                            <Button  color = 'blue' inverted onClick = { () => this.incrementCounter() }> Increment</Button>
+                            <Label>{countVal}</Label>                                    
+                        </Card.Content>
+                    </Segment> 
                 </Card>
-
             </Fragment>
         )
     }

@@ -12,14 +12,27 @@ import CounterHooksBasic from './components/CounterHookBasic';
 
 export default function App() {
   return (
+    <div>
+      <Card.Group centered itemsPerRow = '4'>
+          <CounterClassComponent/>
+          <CounterHooksBasic/>
+      </Card.Group>
+    </div>
+      
+      
+      
+
+  
+  );
+}
+
+// export default App;
+
+/* 
     <div className="App" style = {{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
         <div>
           <CounterClassComponent/>
           <CounterHooksBasic/>
         </div>
     </div>
-  
-  );
-}
-
-// export default App;
+*/
