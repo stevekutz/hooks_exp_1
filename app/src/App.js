@@ -10,6 +10,7 @@ import {Button, Card, Container, Grid,
 import CounterClassComponent from './components/CounterClassComp';
 import CounterHooksBasic from './components/CounterHookBasic';
 import CounterHooksEffects from './components/CounterHooksEffect_1';
+import ArrayHooksEffect1 from './components/ArrayHooksEffect_1';
 
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
           <CounterClassComponent/>
           <CounterHooksBasic/>
           <CounterHooksEffects/>
+          <ArrayHooksEffect1/>
       </Card.Group>
     </div>
       

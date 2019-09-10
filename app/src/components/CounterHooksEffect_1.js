@@ -11,7 +11,7 @@ import {Button, Card, Container, Grid,
         import addReactNDevTools from 'reactn-devtools';
         addReactNDevTools();        
 
-export default function CounterHooksEffect() {
+export default function CounterHooksEffect () {
     const [countVal, incrementCount] = useState(0);
 
     // effect is like side-effects
@@ -30,7 +30,7 @@ export default function CounterHooksEffect() {
                     <Card.Content textAlign = 'center'>
                         {/* will cause Maximum update depth exceed error*/}
                         {/* <Button onClick = { this.incrementCounter() }> increment </Button> */}    
-                        <Button  color = 'purple' inverted onClick = { () => incrementCount(countVal + 1) }> Increment</Button>
+                        <Button  color = 'green' inverted onClick = { () => incrementCount(countVal + 1) }> Increment</Button>
                         <Label>{countVal}</Label>     
                     </Card.Content>                        
                 </Segment> 
