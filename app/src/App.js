@@ -11,7 +11,7 @@ import CounterClassComponent from './components/CounterClassComp';
 import CounterHooksBasic from './components/CounterHookBasic';
 import CounterHooksEffects from './components/CounterHooksEffect_1';
 import ArrayHooksEffect1 from './components/ArrayHooksEffect_1';
-
+import ReactnHooks from './components/ReactnHooks';
 
 export default function App() {
   return (
@@ -20,6 +20,7 @@ export default function App() {
           <CounterClassComponent/>
           <CounterHooksBasic/>
           <CounterHooksEffects/>
+          <ReactnHooks />
           <ArrayHooksEffect1/>
       </Card.Group>
     </div>

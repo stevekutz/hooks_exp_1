@@ -1,6 +1,6 @@
 import React, {useState, useEffect, Fragment} from 'react';
 import avengerInfo from '../data/avengerInfo';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import {Button, Card, Container, Grid, 
     Icon, Image, Label, Menu, Message, 
     Segment} 
@@ -14,7 +14,7 @@ import {Button, Card, Container, Grid,
         addReactNDevTools();        
 
 
-export default function ArrayHooksEffect1 () {
+export default function ReactnHooks() {
     const [avengers, setList] = useState(avengerInfo);
 
 
@@ -25,19 +25,11 @@ export default function ArrayHooksEffect1 () {
                 
                 style = {{ border: `1px solid blue`, margin: `10px`}}>
                 {avengers.map(hero => (
-                        <Card key = {hero.id}>
-                     {/* breaks layout with first item no aligning correctly */}   
-                     {/*   <Card.Group style = {{ border: `1px solid purple`}}>    */}
-                        <Card.Content key = {hero.id}>
-                            
-                            {/*    <Container max-height = '150px'>  */}
-                                    <Image src = {hero.thumbnail} width = '100%' rounded/>
-                            {/*    </Container>    */ }
-                                <Label>  {hero.name} </Label>           
-                 
+                    <Card key = {hero.id}>
+                        <Card.Content key = {hero.id}>               
+                            <Label>  {hero.name} </Label>                                 
                         </Card.Content>
-                    {/*    </Card.Group>    */}
-                        </Card>
+                    </Card>
                     
                     
                     ))}

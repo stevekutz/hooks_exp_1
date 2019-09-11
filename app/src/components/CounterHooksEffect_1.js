@@ -23,7 +23,7 @@ export default function CounterHooksEffect () {
         <Fragment>
             <Card  centered style = {{display: 'flex', justifyContent: 'center', width: '25%'}}>  
                 <Segment>
-                    <Card.Header textAlign = 'center'> Hooks Basic </Card.Header>    
+                    <Card.Header textAlign = 'center'> Hooks Effect 1 </Card.Header>    
                     <Card.Description textAlign = 'center'> {countVal}</Card.Description> 
                 </Segment> 
                 <Segment>
