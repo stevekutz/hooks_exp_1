@@ -26,13 +26,18 @@ const ReactnHooks = () =>  {
 
     console.log('avengers global is  ',  avengers);
 
+    const handleChange = e => {
+        const {name, value} = e.target;
+        console.log('searchVal is ', value);
+    }
+
+
     return (
         <div  style = {{ border: `1px solid blue`, margin: `30px`, padding: `10px`}} >
 
             <Card centered >
-                <Input type = 'text' placeholder = '...search'/>
+                <Input type = 'text' placeholder = '...search' name = 'searchTerm' onChange = {handleChange}/>
             </Card>
-
 
             <Card.Group centered itemsPerRow={5}>
                     {avengers.map(hero => (
@@ -41,8 +46,7 @@ const ReactnHooks = () =>  {
                                 <Label ribbon>  {hero.name} </Label>                                 
                             </Card.Content>
                         </Card>
-                        
-                        
+                                         
                         ))}
             </Card.Group>
         
