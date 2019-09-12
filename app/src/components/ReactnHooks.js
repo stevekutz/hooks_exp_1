@@ -1,11 +1,12 @@
 // import React, {useState, useEffect, Fragment} from 'react';
 import React from 'react';
-import avengerInfo from '../data/avengerInfo';
+// import avengerInfo from '../data/avengerInfo';
 import { useGlobal, setGlobal } from 'reactn';
 // import {Link} from 'react-router-dom';
 import {Button, Card, Container, Grid, 
     Icon, Image, Input, Label, Menu, Message, 
-    Segment} 
+    Segment,
+    FeedUser} 
         from 'semantic-ui-react';
     
     import {PushSpinner, GuardSpinner, 
@@ -14,10 +15,11 @@ import {Button, Card, Container, Grid,
 
         import addReactNDevTools from 'reactn-devtools';
         addReactNDevTools();        
-
+/*
 setGlobal({
     avengers: avengerInfo,    
 })
+*/
 
 
 // export default function ReactnHooks() {
@@ -29,6 +31,7 @@ const ReactnHooks = () =>  {
     const handleChange = e => {
         const {name, value} = e.target;
         console.log('searchVal is ', value);
+      
     }
 
 

@@ -13,6 +13,13 @@ import CounterHooksEffects from './components/CounterHooksEffect_1';
 import ArrayHooksEffect1 from './components/ArrayHooksEffect_1';
 import ReactnHooks from './components/ReactnHooks';
 
+import { useGlobal, setGlobal } from 'reactn';
+import avengerInfo from './data/avengerInfo';
+setGlobal({
+  avengers: avengerInfo,    
+})
+
+
 export default function App() {
   return (
     <div>
