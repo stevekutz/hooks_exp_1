@@ -1,7 +1,8 @@
 // import React, {useState, useEffect, Fragment} from 'react';
 import React from 'react';
+import Fuse from "fuse.js";
 // import avengerInfo from '../data/avengerInfo';
-import { useGlobal, setGlobal } from 'reactn';
+import { useGlobal, useState ,setGlobal } from 'reactn';
 // import {Link} from 'react-router-dom';
 import {Button, Card, Container, Grid, 
     Icon, Image, Input, Label, Menu, Message, 
@@ -25,21 +26,39 @@ setGlobal({
 // export default function ReactnHooks() {
 const ReactnHooks = () =>  {
     const [avengers, setList] = useGlobal('avengers');
+   // const [searchVal, searchAvengers] = useState([]);
 
     console.log('avengers global is  ',  avengers);
 
     const handleChange = e => {
         const {name, value} = e.target;
         console.log('searchVal is ', value);
-      
+        // searchVal = value;
+        
     }
 
+    const options = {
+        shouldSort: true,
+        threshold: 0.6,
+        location: 0,
+        distance: 100,
+        maxPatternLength: 32,
+        minMatchCharLength: 1,
+        keys: [
+          "title",
+          "author.firstName"
+        ]
+      };
+
+    const fuse = new Fuse(avengers, options);  
 
     return (
-        <div  style = {{ border: `1px solid blue`, margin: `30px`, padding: `10px`}} >
+        
+
+        <div  style = {{ border: `1px solid blue`, margin: `30px`, padding: `30px`}} >
 
             <Card centered >
-                <Input type = 'text' placeholder = '...search' name = 'searchTerm' onChange = {handleChange}/>
+                <Input type = 'text' placeholder = '...search' name = 'searchVal' onChange = {handleChange}/>
             </Card>
 
             <Card.Group centered itemsPerRow={5}>
@@ -52,6 +71,8 @@ const ReactnHooks = () =>  {
                                          
                         ))}
             </Card.Group>
+
+
         
         </div>
     )

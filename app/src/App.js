@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
 import {Button, Card, Container, Grid, 
   Icon, Image, Label, Menu, Message, 
   Segment} 
