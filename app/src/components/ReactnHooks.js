@@ -26,7 +26,7 @@ setGlobal({
 // export default function ReactnHooks() {
 const ReactnHooks = () =>  {
     const [avengers, setList] = useGlobal('avengers');
-   // const [searchVal, searchAvengers] = useState([]);
+    const [searchVal, searchAvengers] = useState('');
 
     console.log('avengers global is  ',  avengers);
 
@@ -34,7 +34,7 @@ const ReactnHooks = () =>  {
         const {name, value} = e.target;
         console.log('searchVal is ', value);
         // searchVal = value;
-        
+        searchAvengers(value);
     }
 
     const options = {
@@ -58,7 +58,7 @@ const ReactnHooks = () =>  {
         <div  style = {{ border: `1px solid blue`, margin: `30px`, padding: `30px`}} >
 
             <Card centered >
-                <Input type = 'text' placeholder = '...search' name = 'searchVal' onChange = {handleChange}/>
+                <Input type = 'text' placeholder = '...search' value = {searchVal} onChange = {handleChange}/>
             </Card>
 
             <Card.Group centered itemsPerRow={5}>
