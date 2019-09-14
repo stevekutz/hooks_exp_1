@@ -57,7 +57,7 @@ export default [
     },
     {
       id: '8',
-      name: 'Black Panter',
+      name: 'Black Panther',
       nickname: 'King of Wakanda',
       description: 'T’Challa is the king of the secretive and highly advanced African nation of Wakanda - as well as the powerful warrior known as the Black Panther.',
       thumbnail: 'https://terrigen-cdn-dev.marvel.com/content/prod/1x/007blp_com_crd_01_0.jpg',
