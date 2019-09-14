@@ -23,9 +23,9 @@ setGlobal({
 */
 const options = {
     shouldSort: true,
-    threshold: 0.6,
+    threshold: 0.3,
     location: 0,
-    distance: 100,
+    distance: 10,
     maxPatternLength: 32,
     minMatchCharLength: 1,
     keys: [
@@ -54,6 +54,7 @@ const ReactnHooks = () =>  {
         const {name, value} = e.target;
         searchAvengers(value);
         console.log('value is ', value);
+
      //   searchAvengers(value);
         console.log('searchVal is ', searchVal);
         console.log('avengersFound ', avengersFound);
