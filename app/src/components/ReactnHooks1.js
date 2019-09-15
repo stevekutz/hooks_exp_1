@@ -1,7 +1,3 @@
-// import React, {useState, useEffect, Fragment} from 'react';
-// import React from 'react';
-import Fuse from 'fuse.js';
-// import avengerInfo from '../data/avengerInfo';
 import React,  { useGlobal, useState ,setGlobal } from 'reactn';
 
 import {Button, Card, Container, Grid, 
@@ -16,56 +12,27 @@ import {Button, Card, Container, Grid,
 
         import addReactNDevTools from 'reactn-devtools';
         addReactNDevTools();        
-/*
-setGlobal({
-    avengers: avengerInfo,    
-})
-*/
-const options = {
-    shouldSort: true,
-    threshold: 0.6,
-    location: 5,
-    distance: 10,
-    maxPatternLength: 32,
-    minMatchCharLength: 1,
-    keys: [
-      "name",
-    ]
-  };
 
 
-// export default function ReactnHooks() {
-const ReactnHooks = () =>  {
+// export default function ReactnHooks1() {
+const ReactnHooks1 = () =>  {
     const [avengers, setList] = useGlobal('avengers');
-    const fuse = new Fuse(avengers, options);  
     const [searchVal, searchAvengers] = useState('');
-   // const [searchFound, avengersFound = fuse.search(searchVal)] = useState([]);
 
-    let avengersFound = fuse.search(searchVal);
-    let foundLength = avengersFound.length;
 
     const handleChange = e => {
-        const {name, value} = e.target;
-        searchAvengers(value);
-        console.log('value is ', value);
-
+        searchAvengers(e.target.value);
+        console.log('value is ', e.target.value);
      //   searchAvengers(value);
         console.log('searchVal is ', searchVal);
         console.log('avengersFound ', avengersFound);
-
     }
-    
-    /*
-    const avengersFound = searchVal ? fuse.search(avengersFound) : avengers;  
 
-    const avengerCards = ({avenger}) => {
-        const {id, name, nickname, description, thumbnail, img} = avenger;
-    }  
-    */
+    const avengersFound = avengers.filter(heroFound => {
+        return heroFound.name.toLowerCase().indexOf(searchVal.toLowerCase()) !== -1;
+    })
 
     return (
-        
-
         <div  style = {{ border: `1px solid blue`, margin: `30px`, padding: `30px`}} >
 
             <Card centered >
@@ -80,19 +47,17 @@ const ReactnHooks = () =>  {
                                     <Card.Content key = {hero.id}>               
                                         <Label ribbon>  {hero.name} </Label>                                 
                                     </Card.Content>
-                                </Card>
-                                                
+                                </Card>                                               
                                 ))}
                     </Card.Group>)
                 :
-                    (<Card.Group centered itemsPerRow={ foundLength || 1 }>
+                    (<Card.Group centered itemsPerRow={5}>
                         {avengersFound.map(hero => (
                             <Card key = {hero.id}>
                                 <Card.Content key = {hero.id}>               
                                     <Label ribbon>  {hero.name} </Label>                                 
                                 </Card.Content>
-                            </Card>
-                                            
+                            </Card>                                       
                             ))}
                     </Card.Group>)                 
             }       
@@ -100,20 +65,4 @@ const ReactnHooks = () =>  {
     )
 }
 
-export default ReactnHooks;
-
-/*
-<Card.Group centered itemsPerRow={5}
-                
-                style = {{ border: `1px solid blue`, margin: `10px`}}>
-                {avengers.map(hero => (
-                    <Card key = {hero.id}>
-                        <Card.Content key = {hero.id}>               
-                            <Label>  {hero.name} </Label>                                 
-                        </Card.Content>
-                    </Card>
-                    
-                    
-                    ))}
-            </Card.Group>
-*/
+export default ReactnHooks1;

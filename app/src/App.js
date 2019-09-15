@@ -11,6 +11,8 @@ import CounterHooksBasic from './components/CounterHookBasic';
 import CounterHooksEffects from './components/CounterHooksEffect_1';
 import ArrayHooksEffect1 from './components/ArrayHooksEffect_1';
 import ReactnHooks from './components/ReactnHooks';
+import ReactnHooks1 from './components/ReactnHooks1';
+import ReactnHooks2 from './components/ReactnHooks2';
 
 import { useGlobal, setGlobal } from 'reactn';
 import avengerInfo from './data/avengerInfo';
@@ -27,6 +29,9 @@ export default function App() {
           <CounterHooksBasic/>
           <CounterHooksEffects/>
           <ReactnHooks />
+          <ReactnHooks1 />
+          <ReactnHooks2 />
+
           <ArrayHooksEffect1/>
       </Card.Group>
     </div>
