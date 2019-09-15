@@ -35,9 +35,20 @@ const ReactnHooks1 = () =>  {
     return (
         <div  style = {{ border: `1px solid blue`, margin: `30px`, padding: `30px`}} >
 
-            <Card centered >
+        <Card.Group centered itemsPerRow={2}>
+        <Card style = {{border: '1px solid brown', width: 'auto'}} >
+            <Card.Content>
+                <Label style = {{lineHeight: `1.5`}}> Hooks + filter </Label>
+            </Card.Content>
+        </Card>    
+
+        <Card style = {{border: '1px solid brown', width: 'auto'}}  fluid >
+            <Card.Content>
                 <Input type = 'text' placeholder = '...search' value = {searchVal} onChange = {handleChange}/>
-            </Card>
+            </Card.Content>
+        
+        </Card>
+    </Card.Group>
 
             {searchVal === ''
                 ?

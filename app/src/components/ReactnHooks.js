@@ -7,7 +7,9 @@ import React,  { useGlobal, useState ,setGlobal } from 'reactn';
 import {Button, Card, Container, Grid, 
     Icon, Image, Input, Label, Menu, Message, 
     Segment,
-    FeedUser} 
+    FeedUser,
+    CardGroup,
+    CardHeader} 
         from 'semantic-ui-react';
     
     import {PushSpinner, GuardSpinner, 
@@ -66,11 +68,23 @@ const ReactnHooks = () =>  {
     return (
         
 
-        <div  style = {{ border: `1px solid blue`, margin: `30px`, padding: `30px`}} >
+        <div >
 
-            <Card centered >
-                <Input type = 'text' placeholder = '...search' value = {searchVal} onChange = {handleChange}/>
-            </Card>
+
+            <Card.Group centered itemsPerRow={2}>
+                <Card style = {{border: '1px solid brown', width: 'auto'}} >
+                    <Card.Content>
+                        <Label style = {{lineHeight: `1.5`}}> Hooks + Fuse </Label>
+                    </Card.Content>
+                </Card>    
+
+                <Card style = {{border: '1px solid brown', width: 'auto'}}  fluid >
+                    <Card.Content>
+                        <Input type = 'text' placeholder = '...search' value = {searchVal} onChange = {handleChange}/>
+                    </Card.Content>
+                
+                </Card>
+            </Card.Group>
 
             {searchVal === ''
                 ?
