@@ -4,7 +4,7 @@ import avengerInfo from '../data/avengerInfo';
 export default () => {
     setGlobal({
         avengers: avengerInfo,
-        
+        avengersLocated: [{}],
 
     })
 };

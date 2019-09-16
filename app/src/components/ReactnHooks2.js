@@ -2,7 +2,7 @@
 // import React from 'react';
 import Fuse from 'fuse.js';
 // import avengerInfo from '../data/avengerInfo';
-import React,  { useGlobal, useState ,setGlobal } from 'reactn';
+import React,  { useGlobal, useState ,setGlobal, useEffect } from 'reactn';
 
 import {Button, Card, Container, Grid, 
     Icon, Image, Input, Label, Menu, Message, 
@@ -35,6 +35,8 @@ const options = {
  
 // export default function ReactnHooks() {
 const ReactnHooks2 = () =>  {
+    const [avengersLocated, locatedAvengers] = useGlobal('avengersLocated');
+    
     const [avengers, setList] = useGlobal('avengers');
     const fuse = new Fuse(avengers, options);  
     const [searchVal, searchAvengers] = useState('');
@@ -46,7 +48,27 @@ const ReactnHooks2 = () =>  {
         console.log('searchVal is ', searchVal);
         console.log('avengersFound ', avengersFound);
 
+        locatedAvengers(avengersFound);
+   
+
+        
     }
+
+    /*
+    useEffect( () => {
+        if(searchVal === '') {
+            locatedAvengers([]]) 
+        }
+
+    }, []);
+    */
+    /*
+    useEffect(() => {
+      return () => {
+        effect
+      };
+    }, [input])
+    */
 
     const AvengerCard = ({avenger}) => {
         const {id, name, nickname, description, thumbnail, img} = avenger;
@@ -60,37 +82,42 @@ const ReactnHooks2 = () =>  {
         )
     } 
 
+    
     let avengersFound = searchVal ? fuse.search(searchVal) : avengers;
     let foundLength = avengersFound.length;
-
+    
     return (
         
 
         <div  style = {{ border: `4px solid deeppink`, margin: `30px`, padding: `30px`}} >
 
         <Card.Group centered itemsPerRow={2}>
-        <Card style = {{border: '1px solid brown', width: 'auto'}} >
-            <Card.Content>
-                <Label style = {{lineHeight: `1.5`}}> Hooks + Fuse Refactored </Label>
-            </Card.Content>
-        </Card>    
+            <Card style = {{border: '1px solid brown', width: 'auto'}} >
+                <Card.Content>
+                    <Label style = {{lineHeight: `1.5`}}> Hooks + Fuse Refactored </Label>
+                </Card.Content>
+            </Card>    
 
-        <Card style = {{border: '1px solid brown', width: 'auto'}}  fluid >
-            <Card.Content>
-                <Input type = 'text' placeholder = '...search' value = {searchVal} onChange = {handleChange}/>
-            </Card.Content>
-        
-        </Card>
-    </Card.Group>
+            <Card style = {{border: '1px solid brown', width: 'auto'}}  fluid >
+                <Card.Content>
+                    <Input type = 'text' placeholder = '...search' value = {searchVal} onChange = {handleChange}/>
+                </Card.Content>     
+            </Card>
 
+        </Card.Group>
+            { avengersFound.length 
+                ? 
                     <Card.Group centered itemsPerRow={ foundLength || 1 }>
-                        {avengersFound.map(hero => (
-                            <Card key = {hero.id}>
-                                <AvengerCard avenger = {hero}/>
-                            </Card>
-                                            
-                            ))}
+                    {avengersFound.map(hero => (
+                                    <Card key = {hero.id}>
+                                        <AvengerCard avenger = {hero}/>
+                                    </Card>
+                                                    
+                    ))}
                     </Card.Group>
+                :
+                    null 
+            }
        
         </div>
     )

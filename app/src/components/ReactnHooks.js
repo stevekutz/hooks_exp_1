@@ -38,6 +38,9 @@ const options = {
 
 // export default function ReactnHooks() {
 const ReactnHooks = () =>  {
+    const [avengersLocated, locatedAvengers] = useGlobal('avengersLocated');
+    console.log('avengersLocated >>>>>> ' , avengersLocated);
+
     const [avengers, setList] = useGlobal('avengers');
     const fuse = new Fuse(avengers, options);  
     const [searchVal, searchAvengers] = useState('');
@@ -56,19 +59,11 @@ const ReactnHooks = () =>  {
         console.log('avengersFound ', avengersFound);
 
     }
-    
-    /*
-    const avengersFound = searchVal ? fuse.search(avengersFound) : avengers;  
-
-    const avengerCards = ({avenger}) => {
-        const {id, name, nickname, description, thumbnail, img} = avenger;
-    }  
-    */
 
     return (
         
 
-        <div >
+        <div  style = {{ border: `1px solid seagreen`, margin: `30px`, padding: `30px`}} >
 
 
             <Card.Group centered itemsPerRow={2}>
@@ -81,10 +76,29 @@ const ReactnHooks = () =>  {
                 <Card style = {{border: '1px solid brown', width: 'auto'}}  fluid >
                     <Card.Content>
                         <Input type = 'text' placeholder = '...search' value = {searchVal} onChange = {handleChange}/>
-                    </Card.Content>
-                
+                    </Card.Content>                
                 </Card>
             </Card.Group>
+
+
+            { avengersLocated
+                ?                
+                <Card centered>
+                    <Card.Group centered itemsPerRow={ foundLength || 1 }>
+                        {avengersLocated.map(hero => (
+                        <Card key = {hero.id} style = {{border: '5px solid pink', width: 'auto'}}>
+                            <Label color = 'blue' style = {{width: 'auto'}}>{hero.name}</Label>
+                        </Card>                                    
+                        ))}
+                    </Card.Group>    
+                </Card>  
+                :
+                <Card>
+                    <Label> nothing found in ReactnHooks2 </Label>
+                </Card>            
+
+            }
+
 
             {searchVal === ''
                 ?
@@ -108,7 +122,7 @@ const ReactnHooks = () =>  {
                             </Card>
                                             
                             ))}
-                    </Card.Group>)                 
+                    </Card.Group>)           
             }       
         </div>
     )
@@ -117,7 +131,20 @@ const ReactnHooks = () =>  {
 export default ReactnHooks;
 
 /*
-<Card.Group centered itemsPerRow={5}
+            <Card style = {{border: '1px solid brown', width: 'auto'}}  fluid >
+                <Card.Group centered itemsPerRow={ foundLength || 1 }>
+                    {avengersLocated.map(hero => (
+                    <Card key = {hero.id}>
+                        <Label>hero.name</Label>
+                    </Card>                                    
+                    ))}
+                </Card.Group>    
+            </Card>   
+*/
+
+
+/*
+    <Card.Group centered itemsPerRow={5}
                 
                 style = {{ border: `1px solid blue`, margin: `10px`}}>
                 {avengers.map(hero => (
@@ -129,5 +156,5 @@ export default ReactnHooks;
                     
                     
                     ))}
-            </Card.Group>
+    </Card.Group>
 */
