@@ -16,11 +16,7 @@ import {Button, Card, Container, Grid,
 
         import addReactNDevTools from 'reactn-devtools';
         addReactNDevTools();        
-/*
-setGlobal({
-    avengers: avengerInfo,    
-})
-*/
+
 const options = {
     shouldSort: true,
     threshold: 0.5,
@@ -48,27 +44,9 @@ const ReactnHooks2 = () =>  {
         console.log('searchVal is ', searchVal);
         console.log('avengersFound ', avengersFound);
 
-        locatedAvengers(avengersFound);
-   
-
-        
+        locatedAvengers(avengersFound);    
+        console.log('avengersLocated ====> ' , avengersLocated); 
     }
-
-    /*
-    useEffect( () => {
-        if(searchVal === '') {
-            locatedAvengers([]]) 
-        }
-
-    }, []);
-    */
-    /*
-    useEffect(() => {
-      return () => {
-        effect
-      };
-    }, [input])
-    */
 
     const AvengerCard = ({avenger}) => {
         const {id, name, nickname, description, thumbnail, img} = avenger;
@@ -81,14 +59,11 @@ const ReactnHooks2 = () =>  {
             </Card>
         )
     } 
-
-    
+ 
     let avengersFound = searchVal ? fuse.search(searchVal) : avengers;
     let foundLength = avengersFound.length;
-    
-    return (
-        
 
+    return (
         <div  style = {{ border: `4px solid deeppink`, margin: `30px`, padding: `30px`}} >
 
         <Card.Group centered itemsPerRow={2}>
@@ -117,8 +92,7 @@ const ReactnHooks2 = () =>  {
                     </Card.Group>
                 :
                     null 
-            }
-       
+            }      
         </div>
     )
 }

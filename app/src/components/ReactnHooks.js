@@ -25,11 +25,11 @@ setGlobal({
 */
 const options = {
     shouldSort: true,
-    threshold: 0.6,
+    threshold: 0.5,
     location: 5,
-    distance: 10,
-    maxPatternLength: 32,
-    minMatchCharLength: 1,
+    distance: 5,
+    maxPatternLength: 12,
+    minMatchCharLength: 3,
     keys: [
       "name",
     ]
@@ -39,7 +39,6 @@ const options = {
 // export default function ReactnHooks() {
 const ReactnHooks = () =>  {
     const [avengersLocated, locatedAvengers] = useGlobal('avengersLocated');
-    console.log('avengersLocated >>>>>> ' , avengersLocated);
 
     const [avengers, setList] = useGlobal('avengers');
     const fuse = new Fuse(avengers, options);  
