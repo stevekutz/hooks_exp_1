@@ -26,10 +26,10 @@ setGlobal({
 const options = {
     shouldSort: true,
     threshold: 0.5,
-    location: 5,
-    distance: 5,
+    location:4,
+    distance: 10,
     maxPatternLength: 12,
-    minMatchCharLength: 3,
+    minMatchCharLength: 1,
     keys: [
       "name",
     ]

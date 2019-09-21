@@ -19,10 +19,10 @@ import {Button, Card, Container, Grid,
 
 const options = {
     shouldSort: true,
-    threshold: 0.5,
+    threshold: 0.3,
     location: 5,
-    distance: 10,
-    maxPatternLength: 32,
+    distance: 20,
+    maxPatternLength: 12,
     minMatchCharLength: 1,
     keys: [
       "name",
