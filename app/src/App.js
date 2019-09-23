@@ -10,6 +10,7 @@ import CounterClassComponent from './components/CounterClassComp';
 import CounterHooksBasic from './components/CounterHookBasic';
 import CounterHooksEffects from './components/CounterHooksEffect_1';
 import CounterLifeCycle from './components/CounterLIfeCycle';
+import Counter_HooksEffect_2 from './components/Counter_HooksEffect_2';
 
 import ArrayHooksEffect1 from './components/ArrayHooksEffect_1';
 import ReactnHooks from './components/ReactnHooks';
@@ -26,11 +27,12 @@ setGlobal({
 export default function App() {
   return (
     <div>
-      <Card.Group centered itemsPerRow = '4'>
+      <Card.Group centered itemsPerRow = '5'>
           <CounterClassComponent/>
           <CounterHooksBasic/>
           <CounterHooksEffects/>
           <CounterLifeCycle />
+          <Counter_HooksEffect_2 />
 
           <ReactnHooks />
           <ReactnHooks1 />
