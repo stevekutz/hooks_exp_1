@@ -9,6 +9,8 @@ import {Button, Card, Container, Grid,
 import CounterClassComponent from './components/CounterClassComp';
 import CounterHooksBasic from './components/CounterHookBasic';
 import CounterHooksEffects from './components/CounterHooksEffect_1';
+import CounterLifeCycle from './components/CounterLIfeCycle';
+
 import ArrayHooksEffect1 from './components/ArrayHooksEffect_1';
 import ReactnHooks from './components/ReactnHooks';
 import ReactnHooks1 from './components/ReactnHooks1';
@@ -28,6 +30,8 @@ export default function App() {
           <CounterClassComponent/>
           <CounterHooksBasic/>
           <CounterHooksEffects/>
+          <CounterLifeCycle />
+
           <ReactnHooks />
           <ReactnHooks1 />
           <ReactnHooks2 />
