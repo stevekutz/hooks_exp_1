@@ -1,5 +1,5 @@
 import React, {useState, useEffect } from 'react'
-import {Card, Button, Textarea} from 'react-rainbow-components';
+import {Card, Button} from 'react-rainbow-components';
 
 function Counter_HooksEffect_2() {
     const [count, setCount] = useState(0);
