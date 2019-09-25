@@ -6,6 +6,7 @@ import axios from 'axios';
 function HooksFetchData() {
     const [data, setData] = useState({ hits: [] });
     const [values, setValues] = useState([]);
+    const [checkedItems, setCheckedItems] = useState({}); //plain object as state
 
     useEffect(() => {
       const fetchData = async () => {
@@ -21,17 +22,25 @@ function HooksFetchData() {
 
 
     const options = data.hits.map(item => {
-        return {value: item.title, label: item.title.toString(), disabled: false, isSelected: true }
+        return {value: item.title, label: item.title.toString(), disabled: false, checked: true }
     })
 
 
     console.log('>>>>>  options is ', options);
 
 
+    /*
     const toggleStatus = values => {
-         console.log('values is ', values);
-        setValues(values);
+        
+        setValues({values: [] });
+        console.log('values is ', values);
     }
+    */
+
+    const toggleStatus = e => {
+        console.log('event >>> ', e);
+    }
+
 
     return (
     <div>
@@ -42,7 +51,7 @@ function HooksFetchData() {
             options = {options}
             values = {values}
             onChange = {toggleStatus}
-            isChecked = {true}
+            checked = {true}    
         />    
     
     </div>
@@ -53,6 +62,7 @@ function HooksFetchData() {
 
 
 export default HooksFetchData;
+// onChange = {toggleStatus}
 
 /*
         <ul>

@@ -17,6 +17,7 @@ import ReactnHooks from './components/ReactnHooks';
 import ReactnHooks1 from './components/ReactnHooks1';
 import ReactnHooks2 from './components/ReactnHooks2';
 import HooksFetchData_1 from './components/HooksFetchData_1';
+import CheckboxGroupTry from './components/CheckboxRainbowComp_1';
 
 import { useGlobal, setGlobal } from 'reactn';
 import avengerInfo from './data/avengerInfo';
@@ -35,6 +36,7 @@ export default function App() {
           <CounterLifeCycle />
           <Counter_HooksEffect_2 />
           <HooksFetchData_1/>
+          <CheckboxGroupTry/>
 
           <ReactnHooks />
           <ReactnHooks1 />
