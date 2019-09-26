@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {Button, Card, Container, Grid, 
+import {Button, Card, Container, Component, Grid, 
   Icon, Image, Label, Menu, Message, 
   Segment} 
       from 'semantic-ui-react';
@@ -18,6 +18,7 @@ import ReactnHooks1 from './components/ReactnHooks1';
 import ReactnHooks2 from './components/ReactnHooks2';
 import HooksFetchData_1 from './components/HooksFetchData_1';
 import CheckboxGroupTry from './components/CheckboxRainbowComp_1';
+import SemanticUIR_checkbox from './components/SemanticUIR_checkbox';
 
 import { useGlobal, setGlobal } from 'reactn';
 import avengerInfo from './data/avengerInfo';
@@ -30,6 +31,7 @@ export default function App() {
   return (
     <div>
       <Card.Group centered itemsPerRow = '5'>
+          <SemanticUIR_checkbox />
           <CounterClassComponent/>
           <CounterHooksBasic/>
           <CounterHooksEffects/>
