@@ -19,6 +19,7 @@ import ReactnHooks2 from './components/ReactnHooks2';
 import HooksFetchData_1 from './components/HooksFetchData_1';
 import CheckboxGroupTry from './components/CheckboxRainbowComp_1';
 import SemanticUIR_checkbox from './components/SemanticUIR_checkbox';
+import DropdownExampleSearchDropdown from './components/SemanticUIR_DropDownSearch';
 
 import { useGlobal, setGlobal } from 'reactn';
 import avengerInfo from './data/avengerInfo';
@@ -39,6 +40,7 @@ export default function App() {
           <Counter_HooksEffect_2 />
           <HooksFetchData_1/>
           <CheckboxGroupTry/>
+          <DropdownExampleSearchDropdown/>
 
           <ReactnHooks />
           <ReactnHooks1 />
