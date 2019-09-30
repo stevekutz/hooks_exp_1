@@ -21,6 +21,7 @@ import CheckboxGroupTry from './components/CheckboxRainbowComp_1';
 import SemanticUIR_checkbox from './components/SemanticUIR_checkbox';
 import DropdownExampleSearchDropdown from './components/SemanticUIR_DropDownSearch';
 import SemanticUIR_RadioRemote from './components/SemanticUIR_RadioRemote';
+import HooksRadioExampleRemoteControl from './components/Hooks_RadioRemote'; 
 
 import { useGlobal, setGlobal } from 'reactn';
 import avengerInfo from './data/avengerInfo';
@@ -43,7 +44,8 @@ export default function App() {
           <HooksFetchData_1/>
           <CheckboxGroupTry/>
           <DropdownExampleSearchDropdown/>
-          <RadioExampleRemoteControl />
+          <SemanticUIR_RadioRemote />
+          <HooksRadioExampleRemoteControl />
 
           <ReactnHooks />
           <ReactnHooks1 />
