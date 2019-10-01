@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import {Card, Button, CheckboxGroup} from 'react-rainbow-components';
+import {Card, Button, CheckboxGroup, Checkbox} from 'react-rainbow-components';
 import axios from 'axios';
 
 
 function HooksFetchData() {
     const [data, setData] = useState({ hits: [] });
-    const [values, setValues] = useState([]);
-    const [checkedItems, setCheckedItems] = useState({}); //plain object as state
+    const [values, setValues] = useState({});
+    const [checked, setChecked] = useState(true); 
 
     useEffect(() => {
       const fetchData = async () => {
@@ -22,11 +22,12 @@ function HooksFetchData() {
 
 
     const options = data.hits.map(item => {
-        return {value: item.title, label: item.title.toString(), disabled: false, checked: true }
+        return {value: item.title, label: item.title.toString(), disabled: false }
     })
 
 
     console.log('>>>>>  options is ', options);
+    console.log('>>>>>>>> data is ', data);
 
 
     /*
@@ -45,19 +46,32 @@ function HooksFetchData() {
     return (
     <div>
 
-        <CheckboxGroup
-            id = 'checkbox group'
-            label = 'cb label'
-            options = {options}
-            values = {values}
-            onChange = {toggleStatus}
-            checked = {true}    
-        />    
-    
+      <CheckboxGroup
+        id = 'checkbox group'
+        label = 'cb label'
+        options = {options}
+        values = {values}
+        onClick = { () => setChecked(!checked)}
+        checked = {true}    
+      /> 
+
+      <div>
+      {data.hits.map(item => (
+        <div> 
+          <h4 key = {item.title} >{item.title}</h4>
+       
+        </div>
+        
+      )
+    )}
     </div>
 
 
-    );
+
+    </div>
+
+
+    )
   }
 
 
@@ -72,4 +86,34 @@ export default HooksFetchData;
             </li>
         ))}
         </ul>
+*/
+
+/*
+        {
+          data.hits.map(item => (
+            <Checkbox
+                id = 'checkbox group'
+                label = 'cb label'
+                options = {item.options}
+                values = {item.title}
+                onClick = { () => setChecked(!checked)}
+                checked={checked}  
+            />    
+          ))}
+
+*/
+
+/*
+      <div>
+        {data.hits.map(item => (
+          <Checkbox
+            options = {item.title}
+            value = {item.title}
+            onClick = { () => setChecked(!checked)}
+            checked={checked}
+         />
+
+      ))}
+      </div>
+
 */
