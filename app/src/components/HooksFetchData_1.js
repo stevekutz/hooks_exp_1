@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import {Card, Button, CheckboxGroup, Checkbox} from 'react-rainbow-components';
+import {Card, Button, CheckboxGroup, CheckboxToggle} from 'react-rainbow-components';
 import axios from 'axios';
 
 
 function HooksFetchData() {
     const [data, setData] = useState({ hits: [] });
     const [values, setValues] = useState({});
-    const [checked, setChecked] = useState(true); 
+    const [value, setChecked] = useState(true); 
 
     useEffect(() => {
       const fetchData = async () => {
@@ -45,29 +45,17 @@ function HooksFetchData() {
 
     return (
     <div>
-
-      <CheckboxGroup
-        id = 'checkbox group'
-        label = 'cb label'
-        options = {options}
-        values = {values}
-        onClick = { () => setChecked(!checked)}
-        checked = {true}    
-      /> 
-
-      <div>
-      {data.hits.map(item => (
-        <div> 
-          <h4 key = {item.title} >{item.title}</h4>
-       
-        </div>
+        {data.hits.map(item => (
+      
+            <CheckboxToggle
+              label = {item.title}
+              value={value}
+              
+              onClick = { () => setChecked(!value)}
+            />
         
-      )
-    )}
-    </div>
 
-
-
+        ))}
     </div>
 
 
@@ -106,7 +94,7 @@ export default HooksFetchData;
 /*
       <div>
         {data.hits.map(item => (
-          <Checkbox
+          <CheckboxToggle
             options = {item.title}
             value = {item.title}
             onClick = { () => setChecked(!checked)}
@@ -116,4 +104,16 @@ export default HooksFetchData;
       ))}
       </div>
 
+*/
+
+/*
+
+      <CheckboxGroup
+        id = 'checkbox group'
+        label = 'cb label'
+        options = {options}
+        values = {values}
+        onClick = { () => setChecked(!checked)}
+        checked = {true}    
+      /> 
 */
