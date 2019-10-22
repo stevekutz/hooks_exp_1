@@ -11,7 +11,6 @@ import {Button, Card, Checkbox, Container, Grid,
       from 'semantic-ui-react';
 
 
-
 function HooksFetchData() {
     const [data, setData] = useState({ hits: [] });
     const [values, setValues] = useState({});
@@ -40,7 +39,11 @@ function HooksFetchData() {
             style = {{padding: '5px'}}
             //slider
             label = {thingy.thingy}
-            onClick={() => setIsToggleOn(!isToggleOn)}
+            onClick={() => 
+              {
+                setIsToggleOn(!isToggleOn)
+              }
+            }
         
           />
       )
