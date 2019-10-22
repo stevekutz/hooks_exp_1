@@ -41,12 +41,12 @@ export default function App() {
           <CounterHooksEffects/>
           <CounterLifeCycle />
           <Counter_HooksEffect_2 />
-          <HooksFetchData_1/>
           <CheckboxGroupTry/>
           <DropdownExampleSearchDropdown/>
           <SemanticUIR_RadioRemote />
           <HooksRadioExampleRemoteControl />
-
+          <HooksFetchData_1/>
+          
           <ReactnHooks />
           <ReactnHooks1 />
           <ReactnHooks2 />

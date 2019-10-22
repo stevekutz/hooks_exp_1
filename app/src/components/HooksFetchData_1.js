@@ -11,6 +11,7 @@ import {Button, Card, Checkbox, Container, Grid,
       from 'semantic-ui-react';
 
 
+
 function HooksFetchData() {
     const [data, setData] = useState({ hits: [] });
     const [values, setValues] = useState({});
@@ -28,14 +29,31 @@ function HooksFetchData() {
       fetchData();
     }, []);
 
+    const MyCheckbox = (thingy) => {
+      const [isToggleOn, setIsToggleOn] = React.useState(false);
+      
+      console.log('label is ', thingy);
+    
+      return (
+        
+          <Checkbox 
+            style = {{padding: '5px'}}
+            //slider
+            label = {thingy.thingy}
+            onClick={() => setIsToggleOn(!isToggleOn)}
+        
+          />
+      )
+      
+    }
 
-    const options = data.hits.map(item => {
-        return {value: item.title, label: item.title.toString(), disabled: false }
-    })
+    // const options = data.hits.map(item => {
+    //     return {value: item.title, label: item.title.toString()}
+    // })
 
 
-    console.log('>>>>>  options is ', options);
-    console.log('>>>>>>>> data is ', data);
+    // console.log('>>>>>  options is ', options);
+    // console.log('>>>>>>>> data is ', data);
 
 
     /*
@@ -52,19 +70,12 @@ function HooksFetchData() {
 
 
     return (
-      <Card centered>
-      <Card.Group centered itemsPerRow={ 1 }>
-          {data.hits.map(item => (
-            <Checkbox
-            id = 'checkbox group'
-            label = {item.title}
-            options = {item.options}
-            values = {item.title}
-            onClick = { () => setChecked(!checked)}
-            checked={checked}  
-          />                                     
+      <Card style = {{width: '80%'}}>
+      
+          {data.hits.map((item, index) => (
+            <MyCheckbox key = {index} thingy = {item.title}/>                               
           ))}
-      </Card.Group>    
+        
     </Card>  
 
 
